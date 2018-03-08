@@ -7,3 +7,5 @@ b = 999
 c = 1000
 d = 888
 dell = 'dellcomputer'
+
+dell38 = "today"
