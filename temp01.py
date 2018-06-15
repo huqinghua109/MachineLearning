@@ -106,8 +106,44 @@ from sklearn import decomposition
 # print iris_X_prime.shape
 # print pca.explained_variance_ratio_.sum()
 #####factorAnalysis
-fa = decomposition.FactorAnalysis(n_components=2)
-iris_2_dim = fa.fit_transform(iris_X)
-print iris_2_dim.shape
-print iris_2_dim[0]
-print iris_X[0]
+# fa = decomposition.FactorAnalysis(n_components=2)
+# iris_2_dim = fa.fit_transform(iris_X)
+# print iris_2_dim.shape
+# print iris_2_dim[0]
+# print iris_X[0]
+######### KernelPCA
+# kpca = decomposition.KernelPCA(kernel='cosine', n_components=1)
+# # print kpca
+# A1_mean = [1,1]
+# A1_cov = [[2,0.99], [1,1]]
+# A1 = np.random.multivariate_normal(A1_mean, A1_cov, 50)
+# A2_mean = [5,5]
+# A2_cov = [[2,0.99], [1,1]]
+# A2 = np.random.multivariate_normal(A2_mean, A2_cov, 50)
+# A = np.vstack((A1,A2))
+
+# B_mean = [5,0]
+# B_cov = [[0.5, -1], [-0.9, 0.5]]
+# B = np.random.multivariate_normal(B_mean, B_cov)
+
+# AB = np.vstack((A,B))
+# AB_transformed = kpca.fit_transform(AB)
+# print B
+######### SVD singular value decomposition
+svd = decomposition.TruncatedSVD()
+# print svd
+iris_transformed = svd.fit_transform(iris_X)
+print iris_X.shape, iris_transformed.shape
+
+
+
+
+
+
+
+
+
+
+
+
+
