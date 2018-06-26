@@ -130,13 +130,15 @@ from sklearn import decomposition
 # AB_transformed = kpca.fit_transform(AB)
 # print B
 ######### SVD singular value decomposition
-svd = decomposition.TruncatedSVD()
-# print svd
-iris_transformed = svd.fit_transform(iris_X)
-print iris_X.shape, iris_transformed.shape
-
-
-
+# svd = decomposition.TruncatedSVD()
+# # print svd
+# iris_transformed = svd.fit_transform(iris_X)
+# print iris_X.shape, iris_transformed.shape
+#####DictionaryLearning
+dl = decomposition.DictionaryLearning(3)
+transformed = dl.fit_transform(iris_X[::2])
+print transformed.shape, iris_X[::2].shape
+print transformed
 
 
 
